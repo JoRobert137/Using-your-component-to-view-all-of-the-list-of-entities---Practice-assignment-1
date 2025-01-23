@@ -1,4 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import { useState } from 'react';
+import BookCard from './components/bookcard';
 
 function App() {
   const books = [
@@ -34,7 +36,21 @@ function App() {
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
+  return (
+    <>
+      <div  style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }} >
+        {books.map((book) => (
+          <BookCard
+            key={book.id}
+            image={book.image}
+            name={book.name}
+            genre={book.genre}
+            author={book.author}
+          />
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default App;
